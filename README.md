@@ -1,5 +1,7 @@
 # Template
 
+![CI](https://github.com/TherenceFrn/Symfony/actions/workflows/ci.yml/badge.svg)
+
 ````bash
 
 composer install
