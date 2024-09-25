@@ -1,5 +1,7 @@
 # Template
 
+Symfony 7 Template to use for quick start
+
 ![CI](https://github.com/TherenceFrn/Symfony/actions/workflows/ci.yml/badge.svg)
 
 ````bash
