@@ -6,7 +6,8 @@ use Symfony\Component\Form\Event\PostSubmitEvent;
 use Symfony\Component\Form\Event\PreSubmitEvent;
 use Symfony\Component\String\Slugger\AsciiSlugger;
 
-class FormListenerFactory {
+class FormListenerFactory
+{
     public function autoSlug(string $field): callable
     {
         return function (PreSubmitEvent $event) use ($field) {
