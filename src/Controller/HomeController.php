@@ -2,15 +2,13 @@
 
 namespace App\Controller;
 
+use App\Entity\User;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Attribute\Route;
-use Symfony\Component\Routing\Requirement\Requirement;
-use Symfony\Component\Security\Http\Attribute\IsGranted;
-use App\Entity\User;
 
 class HomeController extends AbstractController
 {
@@ -18,7 +16,7 @@ class HomeController extends AbstractController
     public function index(
         Request $request,
         EntityManagerInterface $em,
-        UserPasswordHasherInterface $passwordHasher
+        UserPasswordHasherInterface $passwordHasher,
     ): Response {
         // Crée un nouvel utilisateur
         $user = new User();

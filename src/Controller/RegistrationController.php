@@ -21,7 +21,7 @@ class RegistrationController extends AbstractController
         Request $request,
         UserPasswordHasherInterface $userPasswordHasher,
         Security $security,
-        EntityManagerInterface $entityManager
+        EntityManagerInterface $entityManager,
     ): Response {
         $user = new User();
         $form = $this->createForm(RegistrationFormType::class, $user);
@@ -30,7 +30,6 @@ class RegistrationController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $password = $form->get('plainPassword')->getData();
             $passwordConfirmation = $form->get('plainPasswordConfirmation')->getData();
-
 
             if ($password !== $passwordConfirmation) {
                 $form->get('plainPasswordConfirmation')->addError(new FormError('The password fields must match.'));
