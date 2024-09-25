@@ -7,7 +7,6 @@ use Symfony\Component\Form\Event\PreSubmitEvent;
 use Symfony\Component\String\Slugger\AsciiSlugger;
 
 class FormListenerFactory {
-
     public function autoSlug(string $field): callable
     {
         return function (PreSubmitEvent $event) use ($field) {
@@ -25,7 +24,7 @@ class FormListenerFactory {
         return function (PostSubmitEvent $event) {
             $data = $event->getData();
             $data->setUpdatedAt(new \DateTimeImmutable());
-            if(!$data->getId()) {
+            if (!$data->getId()) {
                 $data->setCreatedAt(new \DateTimeImmutable());
             }
         };

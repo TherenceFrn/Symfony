@@ -15,8 +15,11 @@ use App\Entity\User;
 class HomeController extends AbstractController
 {
     #[Route('/', name: 'home')]
-    public function index(Request $request, EntityManagerInterface $em, UserPasswordHasherInterface $passwordHasher): Response
-    {
+    public function index(
+        Request $request,
+        EntityManagerInterface $em,
+        UserPasswordHasherInterface $passwordHasher
+    ): Response {
         // Crée un nouvel utilisateur
         $user = new User();
         $user->setUsername('therence');
